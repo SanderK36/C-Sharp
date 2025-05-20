@@ -1,56 +1,35 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using DiceThrower;
+DiceMaster diceMaster = new DiceMaster();
 
-Random random = new Random();
-ThrowDice();
-void ThrowDice()
+MainMenu();
+void MainMenu()
 {
     Console.WriteLine("DICE THROWER!!! We're now gonna throw the dice!");
-    int NumberOfThrownNumberOne = 0;
-    int NumberOfThrownNumberTwo = 0;
-    int NumberOfThrownNumberThree = 0;
-    int NumberOfThrownNumberFour = 0;
-    int NumberOfThrownNumberFive = 0;
-    int NumberOfThrownNumberSix = 0;
+    Console.WriteLine("1. Choose number of dice throws (10 if nothing is specified)");
+    Console.WriteLine("2. Show All statistics");
+    Console.WriteLine("3. Show Specific statistics");
 
-    for (int i = 0; i < 10000; i++)
+    var menuChoice = Console.ReadLine();
+
+    switch (menuChoice)
     {
-        var diceThrow = GetRandomDice();
-        if(diceThrow == 1)
-        {
-            NumberOfThrownNumberOne++;
-        }
-        else if (diceThrow == 2)
-        {
-            NumberOfThrownNumberTwo++;
-        }
-        else if (diceThrow == 3)
-        {
-            NumberOfThrownNumberThree++;
-        }
-        else if (diceThrow == 4)
-        {
-            NumberOfThrownNumberFour++;
-        }
-        else if (diceThrow == 5)
-        {
-            NumberOfThrownNumberFive++;
-        }
-        else if (diceThrow == 6)
-        {
-            NumberOfThrownNumberSix++;
-        }
-        Console.WriteLine($"You rolled a {diceThrow}!");
+        case "1":
+            ChooseNumberOfDiceThrows();
+            DiceMaster.CompleteDiceThrows();
+            break;
+        case "2":
+            DiceMaster.CompleteDiceThrows();
+            DiceMaster.ShowAllStatistics();
+            break;
     }
-    Console.WriteLine($"You rolled a 1 - {NumberOfThrownNumberOne} times.");
-    Console.WriteLine($"You rolled a 2 - {NumberOfThrownNumberTwo} times.");
-    Console.WriteLine($"You rolled a 3 - {NumberOfThrownNumberThree} times.");
-    Console.WriteLine($"You rolled a 4 - {NumberOfThrownNumberFour} times.");
-    Console.WriteLine($"You rolled a 5 - {NumberOfThrownNumberFive} times.");
-    Console.WriteLine($"You rolled a 6 - {NumberOfThrownNumberSix} times.");
 }
 
-int GetRandomDice()
+
+
+void ChooseNumberOfDiceThrows()
 {
-    int diceResult = random.Next(1, 7);
-    return diceResult;
+    Console.WriteLine("What number of throws?");
+    var numberOfThrows = int.Parse(Console.ReadLine());
+    diceMaster.SetNumberOfthrows(numberOfThrows);
 }

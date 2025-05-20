@@ -8,14 +8,16 @@ namespace Overloads_MiniOppgave
 {
     public class Overload
     {
-        public void PrintWelcomeMessage()
-        {
-            Console.WriteLine("Velkommen!");
-        }
+        //public static void PrintWelcomeMessage()
+        //{
+        //    Console.WriteLine("Hei og velkommen!");
+        //}
 
-        public void PrintWelcomeMessage(string compliment = "Du er snill!")
+        public static void PrintWelcomeMessage(string kompliment = "Du er snill!")
         {
-            Console.WriteLine($"Hei og velkommen! {compliment}");
+            Console.WriteLine($"Hei og velkommen {kompliment}");
         }
     }
 }
+
+        
