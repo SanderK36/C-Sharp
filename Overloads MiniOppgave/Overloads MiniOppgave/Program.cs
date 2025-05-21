@@ -4,13 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Overload overload = new Overload();
-
-            overload.PrintWelcomeMessage();
-            overload.PrintWelcomeMessage();
-            overload.PrintWelcomeMessage("Du er fantastisk!");
-
-
+            Overload.PrintWelcomeMessage();
+            Overload.PrintWelcomeMessage("Du er flink!");
         }
     }
 }
