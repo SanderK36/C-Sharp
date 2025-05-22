@@ -10,9 +10,9 @@ namespace Studentadministasjonssystem_test
     {
         public int StudentID { get; private set; }
         public string Fagkode { get; private set; }
-        public string KarakterVerdi { get; private set; }
+        public int KarakterVerdi { get; private set; }
 
-        public Karakter(int studentID, string fagkode, string karakterVerdi)
+        public Karakter(int studentID, string fagkode, int karakterVerdi)
         {
             StudentID = studentID;
             Fagkode = fagkode;

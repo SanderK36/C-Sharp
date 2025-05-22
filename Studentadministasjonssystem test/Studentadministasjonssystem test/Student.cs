@@ -21,6 +21,7 @@ namespace Studentadministasjonssystem_test
             Alder = alder;
             Studieprogram = studieprogram;
             StudentID = studentID;
+            
             makeGrades();
 
         }
@@ -50,17 +51,36 @@ namespace Studentadministasjonssystem_test
             }
         }
 
-        public void GetAvGrade()
+        public void GetAverageGrade()
         {
-            
+            int totalSum = 0;
+
+            foreach (var grade in Karakterer)
+            {
+                totalSum += grade.KarakterVerdi;
+            }
+            Console.WriteLine(totalSum / Karakterer.Count);
         }
 
         public void makeGrades()
         {
             Karakterer = new List<Karakter>()
             {
-                new Karakter(StudentID, "TEST3", "D")
+                new Karakter(StudentID, "TEST3", 4),
+                new Karakter(StudentID, "TEST2", 3),
+                new Karakter(StudentID, "TEST1", 5)
             };
+        }
+
+        public void showTotalPoints()
+        {
+            int points = 0;
+
+            foreach (var fag in Studieprogram)
+            {
+                points += fag.AntallStudiepoeng;
+            }
+            Console.WriteLine(points);
         }
     }
 }
