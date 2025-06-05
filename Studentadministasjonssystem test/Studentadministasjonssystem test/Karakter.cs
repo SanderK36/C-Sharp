@@ -23,7 +23,7 @@ namespace Studentadministasjonssystem_test
         {
             Console.WriteLine($"StudentID: {StudentID}");
             Console.WriteLine($"Fagkode: {Fagkode}");
-            Console.WriteLine($"Karakterverdi: {KarakterVerdi}"); //takk
+            Console.WriteLine($"Karakterverdi: {KarakterVerdi}");
         }
     }
 }

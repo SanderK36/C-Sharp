@@ -15,7 +15,7 @@ namespace FriendFace
 
         private void InitializeUsers()
         {
-            mainUser = new User("Sander Karlsen", 23, "Liker koding og spille gitar");
+            mainUser = new User("Sander Karlsen", 24, "Liker koding og spille gitar");
 
             allUsers = new List<User>
             {
